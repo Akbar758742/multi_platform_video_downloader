@@ -5,3 +5,5 @@ SQLAlchemy==2.0.40
 cryptography==36.0.2
 gunicorn
 Flask-Cors==4.0.0
+validators
+yt-dlp
