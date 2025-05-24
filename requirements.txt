@@ -6,6 +6,6 @@ cryptography==36.0.2
 gunicorn
 Flask-Cors==4.0.0
 validators
-yt-dlp
+yt-dlp>=2024.05.27
 requests
 beautifulsoup4
