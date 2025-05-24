@@ -17,6 +17,8 @@ class YouTubeHandler(BasePlatformHandler):
             'no_warnings': True,
             'ignoreerrors': True,
             'extract_flat': False,
+            # Add cookies.txt support
+            'cookiefile': os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'cookies.txt'),
         }
     
     def extract_info(self, url):
