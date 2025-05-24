@@ -64,11 +64,13 @@ def extract_video_info():
     
     # Create platform handler
     handler = PlatformFactory.create_handler(platform)
-    
-    # Extract video information
-    info = handler.extract_info(url)
-    
-    return jsonify(info)
+    try:
+        # Extract video information
+        info = handler.extract_info(url)
+        return jsonify(info)
+    except Exception as e:
+        print(f"yt-dlp error: {e}")
+        return jsonify({'success': False, 'error': str(e)}), 500
 
 @app.route('/api/download', methods=['POST'])
 def start_download():
