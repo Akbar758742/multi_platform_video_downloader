@@ -1,0 +1,106 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# mypy
+.mypy_cache/
+.dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.*
+
+# Local settings
+*.local
+
+# Log files
+*.log
+
+# Ignore static build artifacts
+*.bak
+*.tmp
+
+# Ignore compiled HTML/JS/CSS
+*.map
+
+# Ignore test cache
+*.pytest_cache/
+
+# Ignore test output
+*.out
+*.test
+
+# Ignore user data
+*.sqlite3
+
+# Ignore Windows shortcuts
+*.lnk
+
+# Ignore backup files
+*~
+
+# Ignore Python egg metadata
+*.egg-info/
+
+# Ignore virtual environment
+venv/
+
+tests/__pycache__/
+src/__pycache__/
+src/services/__pycache__/
+src/services/platforms/__pycache__/
+src/utils/__pycache__/

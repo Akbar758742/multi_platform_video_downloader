@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Platform Video Downloader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-download"></i> Video Downloader</h1>
+            <p>Download videos from YouTube, Facebook, TikTok, and more!</p>
+        </header>
+
+        <main>
+            <section class="url-input-section">
+                <div class="card">
+                    <h2>Enter Video URL</h2>
+                    <div class="input-group">
+                        <input type="text" id="video-url" placeholder="Paste video URL here (YouTube, Facebook, TikTok, etc.)">
+                        <button id="extract-btn">Extract <i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="platform-indicator" id="platform-indicator">
+                        <span class="platform-icon"><i class="fas fa-globe"></i></span>
+                        <span class="platform-text">Waiting for URL...</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="video-info-section" id="video-info-section">
+                <div class="card">
+                    <div class="video-info-header">
+                        <h2>Video Information</h2>
+                        <div class="loader" id="info-loader">
+                            <div class="spinner"></div>
+                            <span>Loading video information...</span>
+                        </div>
+                    </div>
+                    
+                    <div class="video-details" id="video-details">
+                        <div class="video-thumbnail">
+                            <img id="video-thumbnail" src="" alt="Video Thumbnail">
+                        </div>
+                        <div class="video-metadata">
+                            <h3 id="video-title">Video Title</h3>
+                            <p id="video-uploader">Uploader: <span></span></p>
+                            <p id="video-duration">Duration: <span></span></p>
+                            <div class="format-selection">
+                                <label for="format-select">Select Quality:</label>
+                                <select id="format-select">
+                                    <option value="">Select format...</option>
+                                </select>
+                            </div>
+                            <button id="download-btn" class="download-btn">
+                                <i class="fas fa-download"></i> Download Video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="download-status-section" id="download-status-section">
+                <div class="card">
+                    <h2>Download Status</h2>
+                    <div class="download-progress">
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="download-progress-bar"></div>
+                        </div>
+                        <div class="progress-text" id="download-progress-text">0%</div>
+                    </div>
+                    <div class="download-status-message" id="download-status-message">
+                        Waiting to start download...
+                    </div>
+                    <div class="download-actions">
+                        <button id="cancel-btn" class="cancel-btn">
+                            <i class="fas fa-times"></i> Cancel
+                        </button>
+                        <a id="download-link" class="download-link" href="#" download>
+                            <i class="fas fa-file-download"></i> Save File
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <section class="how-to-use">
+            <div class="card">
+                <h2>How to Use</h2>
+                <ol>
+                    <li>Copy the URL of the video you want to download</li>
+                    <li>Paste the URL in the input field above</li>
+                    <li>Click "Extract" to get video information</li>
+                    <li>Select your preferred quality</li>
+                    <li>Click "Download" to start the download process</li>
+                    <li>Once complete, click "Save File" to save the video</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="supported-platforms">
+            <div class="card">
+                <h2>Supported Platforms</h2>
+                <div class="platform-grid">
+                    <div class="platform">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                    </div>
+                    <div class="platform">
+                        <i class="fab fa-facebook"></i>
+                        <span>Facebook</span>
+                    </div>
+                    <div class="platform">
+                        <i class="fab fa-tiktok"></i>
+                        <span>TikTok</span>
+                    </div>
+                    <div class="platform">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </div>
+                    <div class="platform">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter/X</span>
+                    </div>
+                    <div class="platform">
+                        <i class="fab fa-vimeo"></i>
+                        <span>Vimeo</span>
+                    </div>
+                    <div class="platform">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Dailymotion</span>
+                    </div>
+                    <div class="platform">
+                        <i class="fas fa-globe"></i>
+                        <span>Many More</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Video Downloader | For educational purposes only</p>
+            <p class="disclaimer">Please respect copyright laws and terms of service of video platforms.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

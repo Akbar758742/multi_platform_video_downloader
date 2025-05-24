@@ -1,0 +1,423 @@
+/* Main Stylesheet for Video Downloader */
+
+/* Base Styles and Variables */
+:root {
+    --primary-color: #4a6cf7;
+    --primary-dark: #3a56d4;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --body-bg: #f5f8ff;
+    --card-bg: #ffffff;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--body-bg);
+    color: var(--dark-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Card Component */
+.card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+}
+
+header h1 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+/* Form Elements */
+.input-group {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+button {
+    padding: 12px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+}
+
+#extract-btn {
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+/* Platform Indicator */
+.platform-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    color: var(--secondary-color);
+}
+
+.platform-icon {
+    font-size: 1.2rem;
+}
+
+/* Video Info Section */
+.video-info-section {
+    display: none;
+}
+
+.video-info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.loader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.video-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.video-thumbnail {
+    flex: 0 0 300px;
+    max-width: 300px;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+}
+
+.video-metadata {
+    flex: 1;
+    min-width: 300px;
+}
+
+.video-metadata h3 {
+    margin-bottom: 15px;
+}
+
+.video-metadata p {
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.format-selection {
+    margin: 20px 0;
+}
+
+.format-selection label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.format-selection select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    background-color: white;
+    transition: var(--transition);
+}
+
+.format-selection select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.download-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: var(--border-radius);
+    background-color: var(--success-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.download-btn:hover {
+    background-color: #218838;
+}
+
+/* Download Status Section */
+.download-status-section {
+    display: none;
+}
+
+.download-progress {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.progress-bar-container {
+    flex: 1;
+    height: 20px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--primary-color);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-weight: 600;
+    min-width: 40px;
+    text-align: right;
+}
+
+.download-status-message {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+}
+
+.download-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cancel-btn {
+    background-color: var(--danger-color);
+    border-radius: var(--border-radius);
+    flex: 1;
+}
+
+.cancel-btn:hover {
+    background-color: #c82333;
+}
+
+.download-link {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    background-color: var(--success-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.download-link:hover {
+    background-color: #218838;
+}
+
+/* How to Use Section */
+.how-to-use ol {
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.how-to-use li {
+    margin-bottom: 10px;
+}
+
+/* Supported Platforms Section */
+.platform-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.platform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.platform:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow);
+}
+
+.platform i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+    color: var(--secondary-color);
+    border-top: 1px solid #eee;
+}
+
+.disclaimer {
+    font-size: 0.9rem;
+    color: var(--danger-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .video-details {
+        flex-direction: column;
+    }
+    
+    .video-thumbnail {
+        max-width: 100%;
+    }
+    
+    .platform-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    input[type="text"] {
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+    }
+    
+    #extract-btn {
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+    }
+    
+    .download-actions {
+        flex-direction: column;
+    }
+}
